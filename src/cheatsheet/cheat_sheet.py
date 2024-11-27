@@ -40,6 +40,10 @@ class Actions:
         """Open web page with cursorless instructions"""
         actions.user.private_cursorless_notify_docs_opened()
         webbrowser.open(instructions_url)
+        # TODO fix talon weird windows issues
+        # actions.user.switcher_focus("Microsoft Edge")
+        # actions.key("ctrl-t")
+        # actions.browser.go(instructions_url)
 
 
 @ctx.action_class("user")
@@ -65,6 +69,11 @@ class CursorlessActions:
             },
         )
         webbrowser.open(cheatsheet_out_path.as_uri())
+        # TODO fix talon weird windows issues
+        # actions.user.switcher_focus("Microsoft Edge")
+        # actions.key("ctrl-t")
+        # actions.browser.go(cheatsheet_out_path.as_uri())
+
 
     def private_cursorless_cheat_sheet_update_json():
         """Update default cursorless cheatsheet json (for developer use only)"""
